@@ -3,6 +3,12 @@
     "type": "library",
     "description": "Function library for integrating with the University of Lincoln's Nucleus data platform.",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/unilincoln-ost/nucleus-php"
+        }
+    ],
     "authors": [
         {
             "name": "Alex Bilbie",
