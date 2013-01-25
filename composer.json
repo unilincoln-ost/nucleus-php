@@ -1,0 +1,39 @@
+{
+    "name": "unilincoln-ost/nucleus-php",
+    "type": "library",
+    "description": "Function library for integrating with the University of Lincoln's Nucleus data platform.",
+    "authors": [
+        {
+            "name": "Alex Bilbie",
+            "email": "abilbie@lincoln.ac.uk",
+            "homepage": "http://staff.lincoln.ac.uk/abilbie",
+            "role": "Developer"
+        },
+        {
+            "name": "Nick Jackson",
+            "email": "nijackson@lincoln.ac.uk",
+            "homepage": "http://staff.lincoln.ac.uk/nijackson",
+            "role": "Developer"
+        },
+        {
+            "name": "Jamie Mahoney",
+            "email": "jmahoney@lincoln.ac.uk",
+            "homepage": "http://staff.lincoln.ac.uk/jmahoney",
+            "role": "Developer"
+        },
+        {
+            "name": "Harry Newton",
+            "email": "hnewton@lincoln.ac.uk",
+            "homepage": "http://staff.lincoln.ac.uk/hnewton",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+		"psr-0": {
+			"Nucleus": "src"
+		}
+	}
+}
