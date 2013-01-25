@@ -2,6 +2,7 @@
     "name": "unilincoln-ost/nucleus-php",
     "type": "library",
     "description": "Function library for integrating with the University of Lincoln's Nucleus data platform.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Alex Bilbie",
