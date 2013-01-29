@@ -1,0 +1,14 @@
+{
+    "name": "Nucleus",
+    "apiVersion": "2.20130125",
+    "description": "Nucleus allows you to interact with the University of Lincoln's data.",
+    "operations": {
+        "GetLocations": {
+            "httpMethod": "GET",
+            "uri": "/locations",
+            "summary": "Gets a list of geographical locations."
+        }
+    },
+    "models": {
+    }
+}
