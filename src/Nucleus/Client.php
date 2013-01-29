@@ -20,7 +20,7 @@ class Client
 	    }
 	    else
 	    {
-		    return $this->client->$method;
+		    return $this->client->$method();
 	    }
     }
 }
