@@ -7,8 +7,160 @@
             "httpMethod": "GET",
             "uri": "/locations",
             "summary": "Gets a list of geographical locations."
+        },
+        "GetResearchProjects": {
+            "httpMethod": "GET",
+            "uri": "/research_projects",
+            "summary": "Gets a list of research projects.",
+            "parameters": {
+	            "account": {
+		            "location": "query",
+		            "type": "string"
+	            }
+            }
+        },
+        "GetResearchProject": {
+            "httpMethod": "GET",
+            "uri": "/research_projects/id/{id}",
+            "summary": "Gets a research projects.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            }
+        },
+        "CreateResearchProject": {
+            "httpMethod": "POST",
+            "uri": "/research_projects",
+            "summary": "Edits a research projects details.",
+            "parameters": {
+	            "title": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "lead": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "funded": {
+		            "location": "json",
+		            "type": "boolean"
+	            },
+	            "currency_id": {
+		            "location": "json",
+		            "type": "integer"
+	            },
+	            "funding_amount": {
+		            "location": "json",
+		            "type": "integer"
+	            },
+	            "start_date": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "end_date": {
+		            "location": "json",
+		            "type": "string"
+	            }
+            },
+            "responseClass": "NucleusResponse"
+        },
+        "EditResearchProject": {
+            "httpMethod": "POST",
+            "uri": "/research_projects/id/{id}",
+            "summary": "Edits a research projects details.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            },
+	            "title": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "lead": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "research_interests": {
+		            "location": "json",
+		            "type": "string"
+	            },
+	            "funded": {
+		            "location": "json",
+		            "type": "boolean"
+	            },
+	            "currency_id": {
+		            "location": "json",
+		            "type": "integer"
+	            },
+	            "funding_amount": {
+		            "location": "json",
+		            "type": "integer"
+	            },
+	            "start_date": {
+		            "location": "json",
+		            "type": "string"
+	            },
+	            "end_date": {
+		            "location": "json",
+		            "type": "string"
+	            },
+	            "members": {
+		            "location": "json",
+		            "type": "array",
+		            "items": {
+			            "type": "object",
+			            "properties": {
+				            "person_id": {
+					            "type": "integer",
+					            "required": true
+				            },
+				            "role_id": {
+					            "type": "integer",
+					            "required": true
+				            }
+			            }
+		            }
+	            }
+            },
+            "responseClass": "NucleusResponse"
+        },
+        "DeleteResearchProject": {
+            "httpMethod": "DELETE",
+            "uri": "/research_projects/id/{id}",
+            "summary": "Edits a research projects details.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            },
+            "responseClass": "NucleusResponse"
         }
     },
     "models": {
+        "NucleusResponse": {
+            "type": "object",
+            "properties": {
+                "http_code": {
+                    "location": "statusCode",
+                    "type": "integer"
+                },
+                "body": {
+	                "location": "body",
+	                "type": "string"
+                }
+            }
+        }
     }
 }
