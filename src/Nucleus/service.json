@@ -146,6 +146,174 @@
 	            }
             },
             "responseClass": "NucleusResponse"
+        },
+        "GetAcademicYears": {
+        	"httpMethod": "GET",
+        	"uri": "/academic_years",
+        	"summary": "Get academic year details",
+        	"parameters": {
+        		"page": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"limit": {
+        			"location": "uri",
+        			"type": "interger"
+        		},
+        		"name": {
+        			"location": "uri",
+        			"type": "string"
+        		}
+        	}
+        },
+        "GetAcademicYear": {
+            "httpMethod": "GET",
+            "uri": "/academic_years/id/{id}",
+            "summary": "Gets an academic year",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            }
+        },
+        "GetAccreditingBodies": {
+        	"httpMethod": "GET",
+        	"uri": "/accrediting_bodies",
+        	"summary": "Get accrediting body details",
+        	"parameters": {
+        		"page": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"limit": {
+        			"location": "uri",
+        			"type": "interger"
+        		},
+        		"name": {
+        			"location": "uri",
+        			"type": "string"
+        		},
+        		"royal_charter": {
+        			"location": "uri",
+        			"type": "boolean"
+        		},
+        		"statutory_body": {
+        			"location": "uri",
+        			"type": "boolean"
+        		}
+        	}
+        },
+        "GetAccreditingBody": {
+            "httpMethod": "GET",
+            "uri": "/accrediting_bodies/id/{id}",
+            "summary": "Gets an accrediting body.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            }
+        },
+        "GetAssessments": {
+        	"httpMethod": "GET",
+        	"uri": "/assessments",
+        	"summary": "Get assessment details",
+        	"parameters": {
+        		"page": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"limit": {
+        			"location": "uri",
+        			"type": "interger"
+        		},
+        		"teaching_week": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"weighting": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"weighting_gt": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"weighting_lt": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"weighting_gte": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"weighting_lte": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"group_work": {
+        			"location": "uri",
+        			"type": "boolean"
+        		},
+        		"final_assessment": {
+        			"location": "uri",
+        			"type": "boolean"
+        		},
+        		"module_id": {
+        			"location": "uri",
+        			"type": "integer"
+        		}
+        	}
+        },
+        "GetAssessment": {
+            "httpMethod": "GET",
+            "uri": "/assessments/id/{id}",
+            "summary": "Gets an assessment.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            }
+        },
+        "GetAwards": {
+        	"httpMethod": "GET",
+        	"uri": "/awards",
+        	"summary": "Get award details",
+        	"parameters": {
+        		"page": {
+        			"location": "uri",
+        			"type": "integer"
+        		},
+        		"limit": {
+        			"location": "uri",
+        			"type": "interger"
+        		},
+        		"title": {
+        			"location": "uri",
+        			"type": "string"
+        		},
+        		"abb_title": {
+        			"location": "uri",
+        			"type": "string"
+        		}
+        	}
+        },
+        "GetAward": {
+            "httpMethod": "GET",
+            "uri": "/assessments/id/{id}",
+            "summary": "Gets an award.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            }
         }
     },
     "models": {
