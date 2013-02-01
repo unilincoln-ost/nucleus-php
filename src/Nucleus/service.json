@@ -29,7 +29,19 @@
 		            "type": "integer",
 		            "required": true
 	            }
-            }
+            },
+            "errorResponses": [
+            	{
+	            	"code": 404,
+	            	"phrase": "Research Project not found",
+	            	"class": "ResearchProjectNotFoundException"
+            	},
+            	{
+	            	"code": 401,
+	            	"phrase": "Unauthorised",
+	            	"class": "UnauthorisedException"
+            	}
+            ]
         },
         "CreateResearchProject": {
             "httpMethod": "POST",
@@ -114,7 +126,7 @@
 		            "location": "json",
 		            "type": "string"
 	            },
-	            "members": {
+	            "project_members": {
 		            "location": "json",
 		            "type": "array",
 		            "items": {
