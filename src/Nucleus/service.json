@@ -17,7 +17,8 @@
 		            "location": "query",
 		            "type": "string"
 	            }
-            }
+            },
+            "responseClass": "GetResearchProjectsResponse"
         },
         "GetResearchProject": {
             "httpMethod": "GET",
@@ -41,7 +42,8 @@
 	            	"phrase": "Unauthorised",
 	            	"class": "UnauthorisedException"
             	}
-            ]
+            ],
+            "responseClass": "GetResearchProjectResponse"
         },
         "CreateResearchProject": {
             "httpMethod": "POST",
@@ -173,6 +175,63 @@
 	                "type": "string"
                 }
             }
-        }
+        },
+        "ResearchProject": {
+            "type": "object",
+            "properties": {
+	            "title": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "lead": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "funded": {
+		            "location": "json",
+		            "type": "boolean"
+	            },
+	            "currency_id": {
+		            "location": "json",
+		            "type": "integer"
+	            },
+	            "funding_amount": {
+		            "location": "json",
+		            "type": "integer"
+	            },
+	            "start_date": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "end_date": {
+		            "location": "json",
+		            "type": "string"
+	            }
+            }
+        },
+        "GetResearchProjectResponse": {
+            "type": "object",
+            "properties": {
+	            "result": {
+		            "location": "json",
+		            "$ref": "ResearchProject"
+	            }
+            }
+        },
+        "GetResearchProjectsResponse": {
+            "type": "object",
+            "properties": {
+	            "results": {
+		            "location": "json",
+		            "type": "array",
+		            "items": {
+		            	"$ref": "ResearchProject"
+		            }
+	            }
+	        }
+	    }
     }
 }
