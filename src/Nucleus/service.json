@@ -8,6 +8,12 @@
             "uri": "/locations",
             "summary": "Gets a list of geographical locations."
         },
+        "GetResearchProjectRoles": {
+            "httpMethod": "GET",
+            "uri": "/research_project_roles",
+            "summary": "Gets a list of research project roles."
+            }
+        },
         "GetResearchProjects": {
             "httpMethod": "GET",
             "uri": "/research_projects",
@@ -55,11 +61,6 @@
 		            "type": "string",
 		            "required": true
 	            },
-	            "lead": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
@@ -95,11 +96,6 @@
 		            "required": true
 	            },
 	            "title": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
-	            "lead": {
 		            "location": "json",
 		            "type": "string",
 		            "required": true
@@ -180,11 +176,6 @@
             "type": "object",
             "properties": {
 	            "title": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
-	            "lead": {
 		            "location": "json",
 		            "type": "string",
 		            "required": true
