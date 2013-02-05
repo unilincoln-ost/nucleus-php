@@ -19,6 +19,17 @@
 	            }
             }
         },
+        "GetResearchProjectRoles": {
+            "httpMethod": "GET",
+            "uri": "/research_project_roles",
+            "summary": "Gets a list of research project roles.",
+            "parameters": {
+	            "account": {
+		            "location": "query",
+		            "type": "string"
+	            }
+            }
+        },
         "GetResearchProject": {
             "httpMethod": "GET",
             "uri": "/research_projects/id/{id}",
@@ -53,11 +64,6 @@
 		            "type": "string",
 		            "required": true
 	            },
-	            "lead": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
@@ -78,6 +84,23 @@
 	            "end_date": {
 		            "location": "json",
 		            "type": "string"
+	            },
+	            "project_members": {
+		            "location": "json",
+		            "type": "array",
+		            "items": {
+			            "type": "object",
+			            "properties": {
+				            "person_id": {
+					            "type": "integer",
+					            "required": true
+				            },
+				            "role_id": {
+					            "type": "integer",
+					            "required": true
+				            }
+			            }
+		            }
 	            }
             },
             "responseClass": "NucleusResponse"
@@ -93,11 +116,6 @@
 		            "required": true
 	            },
 	            "title": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
-	            "lead": {
 		            "location": "json",
 		            "type": "string",
 		            "required": true
