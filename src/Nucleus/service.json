@@ -85,6 +85,10 @@
 		            "location": "json",
 		            "type": "string"
 	            },
+	            "research_project_status_id": {
+		            "location": "json",
+		            "type": "integer"
+	            },
 	            "project_members": {
 		            "location": "json",
 		            "type": "array",
@@ -117,8 +121,7 @@
 	            },
 	            "title": {
 		            "location": "json",
-		            "type": "string",
-		            "required": true
+		            "type": "string"
 	            },
 	            "research_interests": {
 		            "location": "json",
@@ -143,6 +146,10 @@
 	            "end_date": {
 		            "location": "json",
 		            "type": "string"
+	            },
+	            "research_project_status_id": {
+		            "location": "json",
+		            "type": "integer"
 	            },
 	            "project_members": {
 		            "location": "json",
