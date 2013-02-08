@@ -13,8 +13,7 @@ class NucleusClient extends \Guzzle\Service\Client
     {
     
         $default = array(
-            'base_url' => 'https://n2.online.lincoln.ac.uk',
-            'ssl.certificate_authority' => 'cert'
+            'base_url' => 'https://n2.online.lincoln.ac.uk'
         );
         $required = array('base_url', 'access_token');
         $config = Collection::fromConfig($config, $default, $required);
