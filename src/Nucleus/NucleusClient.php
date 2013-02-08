@@ -26,8 +26,6 @@ class NucleusClient extends \Guzzle\Service\Client
         $client->setDefaultHeaders(array(
         	'Authorization' => 'Bearer ' . base64_encode($config['access_token'])
         ));
-        
-        $client->enableMagicMethods(TRUE);
 
         return $client;
         
