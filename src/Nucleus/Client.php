@@ -14,14 +14,17 @@ class Client
     
     public function __call($method, $params)
     {
-	    if (isset($params))
+    
+	    if (isset($params[0]))
     	{
-	    	return $this->client->$method($params[0]);
+	    	$command = $this->client->getCommand($method, $params[0]);
 	    }
 	    else
 	    {
-		    return $this->client->$method();
+		    $command = $this->client->getCommand($method);
 	    }
+	    
+	    return $this->client->execute($command);
     }
 }
 
