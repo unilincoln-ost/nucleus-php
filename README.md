@@ -2,6 +2,14 @@
 
 Let you connect all your PHP projects to the University of Lincoln's Nucleus data platform with ease.
 
+## Build Status
+
+`develop`  
+[![Build Status](https://travis-ci.org/unilincoln-ost/nucleus-php.png?branch=develop)](https://travis-ci.org/unilincoln-ost/nucleus-php)
+
+`master`  
+[![Build Status](https://travis-ci.org/unilincoln-ost/nucleus-php.png?branch=master)](https://travis-ci.org/unilincoln-ost/nucleus-php)
+
 ## Licence
 
 Copyright (c) 2013 University of Lincoln
