@@ -135,6 +135,10 @@
 		            "location": "json",
 		            "type": "string"
 	            },
+	            "project_visibility": {
+		            "location": "json",
+		            "type": "string"
+	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
