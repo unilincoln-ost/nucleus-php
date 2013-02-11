@@ -127,6 +127,10 @@
 		            "location": "json",
 		            "type": "string"
 	            },
+	            "summary": {
+		            "location": "json",
+		            "type": "string"
+	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
