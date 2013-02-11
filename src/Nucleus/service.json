@@ -64,6 +64,10 @@
 		            "type": "string",
 		            "required": true
 	            },
+	            "summary": {
+		            "location": "json",
+		            "type": "string"
+	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
