@@ -180,7 +180,7 @@
 			            }
 		            }
 	            },
-	            "ckan_group": {
+	            "ckan_group_id": {
 		            "location": "json",
 		            "type": "string"
 	            }
