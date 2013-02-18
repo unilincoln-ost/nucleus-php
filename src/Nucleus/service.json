@@ -64,6 +64,10 @@
 		            "type": "string",
 		            "required": true
 	            },
+	            "summary": {
+		            "location": "json",
+		            "type": "string"
+	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
@@ -131,6 +135,10 @@
 		            "location": "json",
 		            "type": "string"
 	            },
+	            "project_visibility": {
+		            "location": "json",
+		            "type": "string"
+	            },
 	            "funded": {
 		            "location": "json",
 		            "type": "boolean"
@@ -171,6 +179,10 @@
 				            }
 			            }
 		            }
+	            },
+	            "ckan_group": {
+		            "location": "json",
+		            "type": "string"
 	            }
             },
             "responseClass": "NucleusResponse"
