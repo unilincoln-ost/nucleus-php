@@ -183,6 +183,18 @@
 	            }
             },
             "responseClass": "NucleusResponse"
+        },
+        "GetDataset": {
+            "httpMethod": "GET",
+            "uri": "/datasets/id/{id}",
+            "summary": "Gets a research projects.",
+            "parameters": {
+	            "id": {
+		            "location": "uri",
+		            "type": "integer",
+		            "required": true
+	            }
+            }
         }
     },
     "models": {
