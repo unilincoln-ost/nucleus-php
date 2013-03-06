@@ -6,17 +6,71 @@
         "GetLocations": {
             "httpMethod": "GET",
             "uri": "/locations",
-            "summary": "Gets a list of geographical locations."
+            "summary": "Gets a list of geographical locations.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
         },
+        "GetResearchInterests": {
+            "httpMethod": "GET",
+            "uri": "/research_interests",
+            "summary": "Gets a list of research interests.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetResearchInterest": {
+            "httpMethod": "GET",
+            "uri": "/research_interests/id/{id}",
+            "summary": "Gets a research interest.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+
         "GetResearchProjects": {
             "httpMethod": "GET",
             "uri": "/research_projects",
             "summary": "Gets a list of research projects.",
             "parameters": {
-	            "account": {
-		            "location": "query",
-		            "type": "string"
-	            }
+                 "account": {
+                      "location": "query",
+                      "type": "string"
+                 },
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "account": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "public": {
+                    "location": "query",
+                    "type": "boolean"
+                }
             }
         },
         "GetResearchProjectRoles": {
@@ -24,10 +78,10 @@
             "uri": "/research_project_roles",
             "summary": "Gets a list of research project roles.",
             "parameters": {
-	            "account": {
-		            "location": "query",
-		            "type": "string"
-	            }
+                 "account": {
+                      "location": "query",
+                      "type": "string"
+                 }
             }
         },
         "GetResearchProject": {
@@ -35,23 +89,23 @@
             "uri": "/research_projects/id/{id}",
             "summary": "Gets a research projects.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            }
+                 "id": {
+                      "location": "uri",
+                      "type": "integer",
+                      "required": true
+                 }
             },
             "errorResponses": [
-            	{
-	            	"code": 404,
-	            	"phrase": "Research Project not found",
-	            	"class": "ResearchProjectNotFoundException"
-            	},
-            	{
-	            	"code": 401,
-	            	"phrase": "Unauthorised",
-	            	"class": "UnauthorisedException"
-            	}
+                {
+                    "code": 404,
+                    "phrase": "Research Project not found",
+                    "class": "ResearchProjectNotFoundException"
+                },
+                {
+                    "code": 401,
+                    "phrase": "Unauthorised",
+                    "class": "UnauthorisedException"
+                }
             ]
         },
         "CreateResearchProject": {
@@ -59,49 +113,49 @@
             "uri": "/research_projects",
             "summary": "Edits a research projects details.",
             "parameters": {
-	            "title": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
-	            "summary": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "website": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "start_date": {
-		            "location": "json",
-		            "type": "string",
-		            "required": true
-	            },
-	            "end_date": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "research_project_status_id": {
-		            "location": "json",
-		            "type": "integer"
-	            },
-	            "project_members": {
-		            "location": "json",
-		            "type": "array",
-		            "items": {
-			            "type": "object",
-			            "properties": {
-				            "person_id": {
-					            "type": "integer",
-					            "required": true
-				            },
-				            "role_id": {
-					            "type": "integer",
-					            "required": true
-				            }
-			            }
-		            }
-	            }
+                 "title": {
+                      "location": "json",
+                      "type": "string",
+                      "required": true
+                 },
+                 "summary": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "website": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "start_date": {
+                      "location": "json",
+                      "type": "string",
+                      "required": true
+                 },
+                 "end_date": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "research_project_status_id": {
+                      "location": "json",
+                      "type": "integer"
+                 },
+                 "project_members": {
+                      "location": "json",
+                      "type": "array",
+                      "items": {
+                             "type": "object",
+                             "properties": {
+                            "person_id": {
+                                 "type": "integer",
+                                 "required": true
+                            },
+                            "role_id": {
+                                 "type": "integer",
+                                 "required": true
+                            }
+                             }
+                      }
+                 }
             },
             "responseClass": "NucleusResponse"
         },
@@ -110,64 +164,64 @@
             "uri": "/research_projects/id/{id}",
             "summary": "Edits a research projects details.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            },
-	            "title": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "website": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "research_interests": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "summary": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "project_visibility": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "start_date": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "end_date": {
-		            "location": "json",
-		            "type": "string"
-	            },
-	            "research_project_status_id": {
-		            "location": "json",
-		            "type": "integer"
-	            },
-	            "project_members": {
-		            "location": "json",
-		            "type": "array",
-		            "items": {
-			            "type": "object",
-			            "properties": {
-				            "person_id": {
-					            "type": "integer",
-					            "required": true
-				            },
-				            "role_id": {
-					            "type": "integer",
-					            "required": true
-				            }
-			            }
-		            }
-	            },
-	            "ckan_group_id": {
-		            "location": "json",
-		            "type": "string"
-	            }
+                 "id": {
+                      "location": "uri",
+                      "type": "integer",
+                      "required": true
+                 },
+                 "title": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "website": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "research_interests": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "summary": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "project_visibility": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "start_date": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "end_date": {
+                      "location": "json",
+                      "type": "string"
+                 },
+                 "research_project_status_id": {
+                      "location": "json",
+                  "type": "integer"
+                 },
+                 "project_members": {
+                      "location": "json",
+                      "type": "array",
+                      "items": {
+                             "type": "object",
+                             "properties": {
+                            "person_id": {
+                                 "type": "integer",
+                                 "required": true
+                            },
+                            "role_id": {
+                                 "type": "integer",
+                                 "required": true
+                            }
+                             }
+                      }
+                 },
+                 "ckan_group_id": {
+                      "location": "json",
+                      "type": "string"
+                 }
             },
             "responseClass": "NucleusResponse"
         },
@@ -176,11 +230,11 @@
             "uri": "/research_projects/id/{id}",
             "summary": "Edits a research projects details.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            }
+                 "id": {
+                      "location": "uri",
+                      "type": "integer",
+                      "required": true
+                 }
             },
             "responseClass": "NucleusResponse"
         },
@@ -189,11 +243,11 @@
             "uri": "/datasets/id/{id}",
             "summary": "Gets a research projects.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            }
+                 "id": {
+                      "location": "uri",
+                      "type": "integer",
+                      "required": true
+                 }
             }
         }
     },
@@ -206,8 +260,8 @@
                     "type": "integer"
                 },
                 "body": {
-	                "location": "body",
-	                "type": "string"
+                     "location": "body",
+                     "type": "string"
                 }
             }
         }
