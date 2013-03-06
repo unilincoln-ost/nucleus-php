@@ -3,31 +3,92 @@
     "apiVersion": "2.20130125",
     "description": "Nucleus allows you to interact with the University of Lincoln's data.",
     "operations": {
+        "GetDataset": {
+            "httpMethod": "GET",
+            "uri": "/datasets/id/{id}",
+            "summary": "Gets a research projects.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
         "GetLocations": {
             "httpMethod": "GET",
             "uri": "/locations",
-            "summary": "Gets a list of geographical locations."
+            "summary": "Gets a list of geographical locations.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetResearchInterests": {
+            "httpMethod": "GET",
+            "uri": "/research_interests",
+            "summary": "Gets a list of research interests.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetResearchInterest": {
+            "httpMethod": "GET",
+            "uri": "/research_interests/id/{id}",
+            "summary": "Gets a research interest.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
         },
         "GetResearchProjects": {
             "httpMethod": "GET",
             "uri": "/research_projects",
             "summary": "Gets a list of research projects.",
             "parameters": {
-	            "account": {
-		            "location": "query",
-		            "type": "string"
-	            }
+                "account": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "public": {
+                    "location": "query",
+                    "type": "boolean"
+                }
             }
         },
-        "GetResearchProjectRoles": {
+        "GetResearchProjectPermissions": {
             "httpMethod": "GET",
-            "uri": "/research_project_roles",
-            "summary": "Gets a list of research project roles.",
+            "uri": "/research_project_permissions",
+            "summary": "Gets a list of research project permissions.",
             "parameters": {
-	            "account": {
-		            "location": "query",
-		            "type": "string"
-	            }
+                "account": {
+                    "location": "query",
+                    "type": "string"
+                }
             }
         },
         "GetResearchProject": {
@@ -35,23 +96,23 @@
             "uri": "/research_projects/id/{id}",
             "summary": "Gets a research projects.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            }
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
             },
             "errorResponses": [
-            	{
-	            	"code": 404,
-	            	"phrase": "Research Project not found",
-	            	"class": "ResearchProjectNotFoundException"
-            	},
-            	{
-	            	"code": 401,
-	            	"phrase": "Unauthorised",
-	            	"class": "UnauthorisedException"
-            	}
+                {
+                    "code": 404,
+                    "phrase": "Research Project not found",
+                    "class": "ResearchProjectNotFoundException"
+                },
+                {
+                    "code": 401,
+                    "phrase": "Unauthorised",
+                    "class": "UnauthorisedException"
+                }
             ]
         },
         "CreateResearchProject": {
@@ -95,7 +156,7 @@
 					            "type": "integer",
 					            "required": true
 				            },
-				            "role_id": {
+				            "permission_id": {
 					            "type": "integer",
 					            "required": true
 				            }
@@ -157,7 +218,7 @@
 					            "type": "integer",
 					            "required": true
 				            },
-				            "role_id": {
+				            "permission_id": {
 					            "type": "integer",
 					            "required": true
 				            }
@@ -176,24 +237,39 @@
             "uri": "/research_projects/id/{id}",
             "summary": "Edits a research projects details.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            }
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
             },
             "responseClass": "NucleusResponse"
         },
-        "GetDataset": {
+        "GetResearchShowcases": {
             "httpMethod": "GET",
-            "uri": "/datasets/id/{id}",
-            "summary": "Gets a research projects.",
+            "uri": "/research_showcases",
+            "summary": "Gets a list of research showcases.",
             "parameters": {
-	            "id": {
-		            "location": "uri",
-		            "type": "integer",
-		            "required": true
-	            }
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetResearchShowcase": {
+            "httpMethod": "GET",
+            "uri": "/research_showcases/id/{id}",
+            "summary": "Gets a research showcase.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
             }
         }
     },
@@ -206,8 +282,8 @@
                     "type": "integer"
                 },
                 "body": {
-	                "location": "body",
-	                "type": "string"
+                    "location": "body",
+                    "type": "string"
                 }
             }
         }
