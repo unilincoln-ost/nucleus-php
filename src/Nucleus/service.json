@@ -221,6 +221,10 @@
 				            "permission_id": {
 					            "type": "integer",
 					            "required": true
+				            },
+				            "role": {
+					            "type": "string",
+					            "required": true
 				            }
 			            }
 		            }
