@@ -1,12 +1,38 @@
 {
     "name": "Nucleus",
-    "apiVersion": "2.20130125",
     "description": "Nucleus allows you to interact with the University of Lincoln's data.",
     "operations": {
         "GetDataset": {
             "httpMethod": "GET",
             "uri": "/datasets/id/{id}",
             "summary": "Gets a research projects.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+         "GetEprints": {
+            "httpMethod": "GET",
+            "uri": "/eprints",
+            "summary": "Gets a list of ePrints.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+         "GetEprint": {
+            "httpMethod": "GET",
+            "uri": "/eprints/id/{id}",
+            "summary": "Gets an ePrint.",
             "parameters": {
                 "id": {
                     "location": "uri",
