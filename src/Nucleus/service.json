@@ -71,6 +71,11 @@
 		            "type": "string",
 		            "required": true
 	            },
+	            "dataset_id":{
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
 	            "eprints_type": {
 		            "type": "object",
 		            "location": "json",
