@@ -41,6 +41,76 @@
                 }
             }
         },
+        "CreateEprint": {
+            "httpMethod": "POST",
+            "uri": "/eprints",
+            "summary": "Creates an ePrint.",
+            "parameters": {
+	            "eprints_id": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "title": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "doi": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "date_year":{
+		            "location": "json",
+		            "type": "integer",
+		            "required": true
+	            },
+	            "publisher":{
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "eprints_type": {
+		            "type": "object",
+		            "location": "json",
+		            "required": true,
+		            "properties": {
+			            "id": {
+				            "type": "integer",
+				            "required": true
+			            }
+		            }
+	            },
+	            "research_project": {
+		            "type": "object",
+		            "location": "json",
+		            "required": true,
+		            "properties": {
+			            "id": {
+				            "type": "integer",
+				            "required": true
+			            }
+		            }
+	            }	            
+            },
+            "responseClass": "NucleusResponse"
+        },
+        "GetLocations": {
+            "httpMethod": "GET",
+            "uri": "/locations",
+            "summary": "Gets a list of geographical locations.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
         "GetResearchInterests": {
             "httpMethod": "GET",
             "uri": "/research_interests",
