@@ -1,6 +1,5 @@
 {
     "name": "Nucleus",
-    "apiVersion": "2.20130125",
     "description": "Nucleus allows you to interact with the University of Lincoln's data.",
     "operations": {
         "GetDataset": {
@@ -14,6 +13,97 @@
                     "required": true
                 }
             }
+        },
+        "GetLocations": {
+            "httpMethod": "GET",
+            "uri": "/locations",
+            "summary": "Gets a list of geographical locations.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetPerson": {
+            "httpMethod": "GET",
+            "uri": "/people/id/{id}",
+            "summary": "Gets a person record.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+        "CreateEprint": {
+            "httpMethod": "POST",
+            "uri": "/eprints",
+            "summary": "Creates an ePrint.",
+            "parameters": {
+	            "eprints_id": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "title": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "doi": {
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "date_year":{
+		            "location": "json",
+		            "type": "integer",
+		            "required": true
+	            },
+	            "publisher":{
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "abstract":{
+		            "location": "json",
+		            "type": "string"
+	            },
+	            "dataset_id":{
+		            "location": "json",
+		            "type": "string",
+		            "required": true
+	            },
+	            "eprints_type": {
+		            "type": "object",
+		            "location": "json",
+		            "required": true,
+		            "properties": {
+			            "id": {
+				            "type": "integer",
+				            "required": true
+			            }
+		            }
+	            },
+	            "research_project": {
+		            "type": "object",
+		            "location": "json",
+		            "required": true,
+		            "properties": {
+			            "id": {
+				            "type": "integer",
+				            "required": true
+			            }
+		            }
+	            }	            
+            },
+            "responseClass": "NucleusResponse"
         },
         "GetLocations": {
             "httpMethod": "GET",
