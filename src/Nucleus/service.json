@@ -71,6 +71,10 @@
 		            "type": "string",
 		            "required": true
 	            },
+	            "abstract":{
+		            "location": "json",
+		            "type": "string"
+	            },
 	            "dataset_id":{
 		            "location": "json",
 		            "type": "string",
