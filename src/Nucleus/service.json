@@ -62,8 +62,7 @@
 	            },
 	            "dataset_id":{
 		            "location": "json",
-		            "type": "string",
-		            "required": true
+		            "type": "string"
 	            },
 	            "eprints_type": {
 		            "type": "object",
