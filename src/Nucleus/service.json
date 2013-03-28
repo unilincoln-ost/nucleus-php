@@ -89,6 +89,45 @@
             },
             "responseClass": "NucleusResponse"
         },
+        "GetExpertiseFields": {
+            "httpMethod": "GET",
+            "uri": "/expertise_fields",
+            "summary": "Gets a list of fields of expertise.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetExpertiseField": {
+            "httpMethod": "GET",
+            "uri": "/expertise_fields/id/{id}",
+            "summary": "Gets a field of expertise.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+        "GetExpertiseFieldBySlug": {
+            "httpMethod": "GET",
+            "uri": "/expertise_fields/slug/{slug}",
+            "summary": "Gets a field of expertise by slug.",
+            "parameters": {
+                "slug": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                }
+            }
+        },
         "GetLocations": {
             "httpMethod": "GET",
             "uri": "/locations",
