@@ -2,10 +2,10 @@
     "name": "Nucleus",
     "description": "Nucleus allows you to interact with the University of Lincoln's data.",
     "operations": {
-        "GetDataset": {
+    	"GetCollege": {
             "httpMethod": "GET",
-            "uri": "/datasets/id/{id}",
-            "summary": "Gets a research projects.",
+            "uri": "/colleges/id/{id}",
+            "summary": "Gets a college.",
             "parameters": {
                 "id": {
                     "location": "uri",
@@ -14,25 +14,10 @@
                 }
             }
         },
-        "GetLocations": {
+        "GetDataset": {
             "httpMethod": "GET",
-            "uri": "/locations",
-            "summary": "Gets a list of geographical locations.",
-            "parameters": {
-                "page": {
-                    "location": "query",
-                    "type": "integer"
-                },
-                "limit": {
-                    "location": "query",
-                    "type": "integer"
-                }
-            }
-        },
-        "GetPerson": {
-            "httpMethod": "GET",
-            "uri": "/people/id/{id}",
-            "summary": "Gets a person record.",
+            "uri": "/datasets/id/{id}",
+            "summary": "Gets a research projects.",
             "parameters": {
                 "id": {
                     "location": "uri",
@@ -77,8 +62,7 @@
 	            },
 	            "dataset_id":{
 		            "location": "json",
-		            "type": "string",
-		            "required": true
+		            "type": "string"
 	            },
 	            "eprints_type": {
 		            "type": "object",
@@ -105,6 +89,45 @@
             },
             "responseClass": "NucleusResponse"
         },
+        "GetExpertiseFields": {
+            "httpMethod": "GET",
+            "uri": "/expertise_fields",
+            "summary": "Gets a list of fields of expertise.",
+            "parameters": {
+                "page": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "integer"
+                }
+            }
+        },
+        "GetExpertiseField": {
+            "httpMethod": "GET",
+            "uri": "/expertise_fields/id/{id}",
+            "summary": "Gets a field of expertise.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+        "GetExpertiseFieldBySlug": {
+            "httpMethod": "GET",
+            "uri": "/expertise_fields/slug/{slug}",
+            "summary": "Gets a field of expertise by slug.",
+            "parameters": {
+                "slug": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                }
+            }
+        },
         "GetLocations": {
             "httpMethod": "GET",
             "uri": "/locations",
@@ -117,6 +140,30 @@
                 "limit": {
                     "location": "query",
                     "type": "integer"
+                }
+            }
+        },
+        "GetLocation": {
+            "httpMethod": "GET",
+            "uri": "/locations/id/{id}",
+            "summary": "Gets a location record.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+        "GetPerson": {
+            "httpMethod": "GET",
+            "uri": "/people/id/{id}",
+            "summary": "Gets a person record.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
                 }
             }
         },
@@ -161,6 +208,14 @@
                     "type": "integer"
                 },
                 "limit": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "school": {
+                    "location": "query",
+                    "type": "integer"
+                },
+                "college": {
                     "location": "query",
                     "type": "integer"
                 },
@@ -358,6 +413,18 @@
             "httpMethod": "GET",
             "uri": "/research_showcases/id/{id}",
             "summary": "Gets a research showcase.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
+        "GetSchool": {
+            "httpMethod": "GET",
+            "uri": "/schools/id/{id}",
+            "summary": "Gets a school.",
             "parameters": {
                 "id": {
                     "location": "uri",
