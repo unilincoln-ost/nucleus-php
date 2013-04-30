@@ -26,6 +26,18 @@
                 }
             }
         },
+        "ProjectDatasetsRefresh": {
+            "httpMethod": "GET",
+            "uri": "/datasets/request_refresh/{id}",
+            "summary": "Refreshes the datasets for a given research project ID.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "type": "integer",
+                    "required": true
+                }
+            }
+        },
         "CreateEprint": {
             "httpMethod": "POST",
             "uri": "/eprints",
